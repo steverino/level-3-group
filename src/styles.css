@@ -69,4 +69,36 @@ body {
 
 }
 
+.meme-image {
+  text-align: center;
+  margin-top: 1rem;
+  position: relative;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+  
+}
 
+.meme-image img {
+  width: 100%;
+}
+
+
+.top-text{
+  position: absolute;
+  left: 40%;
+  top: 5px;
+  color:#777;
+  font-size: 4rem;
+  margin: 0;
+  
+}
+
+.bottom-text{
+  position: absolute;
+  
+  top: 85%;
+  left: 40%;
+  color: #777;
+  font-size: 4rem;
+  margin: 0;
+}
