@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from './components/Header'
+import Meme from './components/Meme'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className='container'>
+        <Header/>
+        <Meme/>
+    </div>
   )
 }
 
