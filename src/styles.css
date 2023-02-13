@@ -7,13 +7,23 @@ body {
   margin: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  border: solid 1px black;
+}
+
 .header {
     display: flex;
     align-items: center;
     height: 65px;
-    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    background: linear-gradient(45deg, #222880 1.18%, #6549c9 100%);
     color: white;
     padding: 20px;
+    width: 50%;
 }
 
 .header--image {
@@ -29,6 +39,34 @@ body {
 .header--project {
     font-size: 0.75rem;
     font-weight: 500;
+}
+
+.meme {
+  position: relative;
+  width: 50%;
+}
+
+.meme-input {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* border: 1px solid #f00; */
+  gap: 1rem;
+  margin: 1rem 0;
+
+}
+
+.meme-input input {
+  border-radius: 3px;
+}
+
+.meme-button button{
+  color: white;
+  background-color: #222880;
+  width: 100%;
+  border-radius: 5px;
+  height: 2rem;
+
 }
 
 
