@@ -16,6 +16,10 @@ body {
   border: solid 1px black;
 }
 
+.wrapper {
+  width: 50%;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -23,7 +27,7 @@ body {
     background: linear-gradient(45deg, #222880 1.18%, #6549c9 100%);
     color: white;
     padding: 20px;
-    width: 50%;
+    
 }
 
 .header--image {
@@ -44,17 +48,19 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .meme {
   position: relative;
-  width: 100%;
+  
+  
 }
 
 .meme-input {
   position: relative;
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
   /* border: 1px solid #f00; */
   gap: 1rem;

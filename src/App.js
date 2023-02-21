@@ -7,20 +7,24 @@ import MemesList from './components/MemesList';
 const baseURL = "https://api.imgflip.com/get_memes";
 
 const App = () => {
-  const [randImage, setRandImage] = React.useState("./logo192.png");
-
+  
   const [image, setImage] = React.useState([]);
+  let randNum = Math.floor(Math.random() * image.length); //set a random number based on the length of the array returned
+  
   const [imageId, setImageId] = React.useState()
-
+  
+  
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setImage(response.data.data.memes); // get the data returned from the API and assign it to image
     });
   }, []);
+
+  
+  const [randImage, setRandImage] = React.useState('logo192.png')
+  
   function changeImage() {
-    let randNum = Math.floor(Math.random() * image.length); //set a random number based on the length of the array returned
     const url = image[randNum].url; // The API returns an object that has the url of the image
-    
     setRandImage(url);
 
     let uid = Date.now() //Math.floor(Math.random() * randNum )
@@ -68,6 +72,7 @@ const App = () => {
   
   return (
     <div className='container'>
+      <div className="wrapper">
       <Header/>
       <div className="meme-input">
         <input
@@ -107,6 +112,7 @@ const App = () => {
 
         </ul>
       </section>
+      </div>
     </div>
   )
 }
