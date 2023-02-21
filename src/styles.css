@@ -41,9 +41,15 @@ body {
     font-weight: 500;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  
+}
+
 .meme {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .meme-input {

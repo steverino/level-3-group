@@ -9,9 +9,9 @@ const MemesList = ({topText,image,bottomText,id}) => {
         setImageList([image])
     }
  return (
-    <div>
+    
         <Meme key={id} topText={topText} image={image} bottomText={bottomText}/>
-    </div>
+   
   )
 }
 

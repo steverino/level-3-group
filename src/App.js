@@ -92,7 +92,7 @@ const App = () => {
           New Meme Image
         </button>
       </div>
-      <div>
+      <div className='content'>
         <div>
         <Meme topText={myInput.topText} image={randImage} bottomText={myInput.bottomText}/>
 
