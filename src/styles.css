@@ -98,7 +98,6 @@ ul {
   width: 50%;
 }
 
-
 .top-text{
   position: absolute;
   left: 40%;
@@ -117,4 +116,8 @@ ul {
   color: #777;
   font-size: 4rem;
   margin: 0;
+}
+
+.list-inputs {
+  margin-top: 2rem;
 }

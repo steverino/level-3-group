@@ -8,29 +8,28 @@ const baseURL = "https://api.imgflip.com/get_memes";
 
 const App = () => {
   
-  const [image, setImage] = React.useState([]);
+  const [image, setImage] = React.useState(baseURL);
   let randNum = Math.floor(Math.random() * image.length); //set a random number based on the length of the array returned
-  
-  const [imageId, setImageId] = React.useState()
-  
   
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setImage(response.data.data.memes); // get the data returned from the API and assign it to image
     });
+    
   }, []);
-
+  
+  
+  const [imageId, setImageId] = React.useState()
   
   const [randImage, setRandImage] = React.useState('logo192.png')
   
+  let uid = Date.now() //Math.floor(Math.random() * randNum )
   function changeImage() {
     const url = image[randNum].url; // The API returns an object that has the url of the image
     setRandImage(url);
-
-    let uid = Date.now() //Math.floor(Math.random() * randNum )
+    
     setImageId(uid)
-    
-    
+  
   }
   const [myInput, setMyInput] = React.useState({
     topText: "",
@@ -59,12 +58,19 @@ const App = () => {
         image: randImage,
       }
     });
+
+    const deleteMeme = (uid) => {
+      const newList = list.filter((item) => item.id !== uid)
+     setList(newList)
+    };
+    
     setList((prevList)=> {
+      
       return[
       ...prevList,
-      <li key={Date.now()}>
-        <MemesList  topText={myInput.topText} image={randImage} bottomText={myInput.bottomText}/>
-
+      <li key={uid}>
+        <MemesList id={uid} topText={myInput.topText} image={randImage} bottomText={myInput.bottomText}/>
+        <button type="button" name="deleteItemBtn" onClick={deleteMeme } >Delete</button>
       </li>
       ]
     })
