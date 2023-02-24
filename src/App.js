@@ -112,10 +112,7 @@ const App = () => {
       </div>
       <section>
         <ul>
-        
-        {list }
-          
-
+           {list }
         </ul>
       </section>
       </div>
